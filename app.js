@@ -19,15 +19,14 @@ app.use('/products', productRouter)
 app.use('/login', loginRouter)
 app.use('/users', usersRouter)
 app.use('/cart', cartRouter)
-app.use(express.static(path.join(__dirname, "build")))
-
+app.use(express.static(path.join(__dirname, 'client', 'build')))
 
 app.use(mw.unknownEndpoint)
 app.use(mw.errorHandler)
 
 const PORT = process.env.PORT || 3001
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "build", "index.html"))
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'))
 })
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`))
