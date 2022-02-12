@@ -5,7 +5,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
-    "import": "node ./populateDb.js"
+    "import": "node ./populateDb.js",
+    "heroku-postbuild": "cd ../react-ecommerce && npm install --only=dev && npm install && npm run build && mv build ../express-ecommerce/"  ,
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
