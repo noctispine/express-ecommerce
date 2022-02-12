@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js",
     "import": "node ./populateDb.js",
-    "heroku-postbuild": "cd client && npm install && npm run build",
+    "postbuild": "cd ../react-ecommerce && npm install --only=dev  && npm run build && mv build ../express-ecommerce/client",
     "start": "node app.js"
   },
   "author": "",
