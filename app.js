@@ -13,7 +13,7 @@ connectDB()
 
 const app = express()
 app.use(express.json())
-app.use(mw.requestLogger)
+//app.use(mw.requestLogger)
 
 app.use('/products', productRouter)
 app.use('/login', loginRouter)
