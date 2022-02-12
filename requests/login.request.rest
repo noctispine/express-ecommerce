@@ -1,0 +1,12 @@
+POST http://localhost:3001/login
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "test123" 
+}
+
+###
+POST http://localhost:3001/login/checktoken
+Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjYxOTUwMTNlMzE4MWU4MzlkMmU3NmNmZSIsImlhdCI6MTYzNzQxNzc5MiwiZXhwIjoxNjM3NDE5NTkyfQ.D2TzmBgoHS1Njyy0pXPnGVlEKcCgq3u6KgD0T_HIfGI

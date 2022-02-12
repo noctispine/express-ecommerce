@@ -5,6 +5,8 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true, unique: true },
   username: { type: String, required: true, unique: true },
   passwordHash: { type: String, required: true },
+  cart: { type: mongoose.Schema.Types.ObjectId, ref: 'Cart' },
+
 })
 
 UserSchema.plugin(uniqueValidator)

@@ -40,6 +40,32 @@ const login = async (req, res, next) => {
   }
 }
 
+const reLogin = async (req, res, next) => {
+  const body = req.body
+  const user = req.user
+  try {
+    
+    // create new token for user
+    if (JSON.parse(body.username) === req.user.username) {
+      const userForToken = {
+        username: user.username,
+        id: user._id,
+      }
+      const token = jwt.sign(userForToken, process.env.SECRET, {
+        expiresIn: 60 * 30,
+      })
+      res.status(200).send({ token })
+    } else {
+      return res.status(401).json({
+        error: 'invalid username or token',
+      })
+    }
+  } catch (err) {
+    next(err)
+  }
+}
+
 module.exports = {
   login,
+  reLogin
 }

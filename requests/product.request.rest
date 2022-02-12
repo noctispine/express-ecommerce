@@ -1,0 +1,4 @@
+GET http://localhost:3001/products
+
+###
+GET http://localhost:3001/products/?filterArr=["food"]
